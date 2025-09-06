@@ -35,14 +35,13 @@ nav {
     justify-content: space-around;
     align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Alterado para o gradiente */
-    background: linear-gradient(to bottom, #00387d, #1463a0);
-    height: 10vh; /* Aumentado um pouco para o gradiente respirar */
+    background: linear-gradient(to bottom, #00387d, #1463a0);    
+    height: 10vh;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .logo {
-    max-height: 60px; /* Ajuste o tamanho da sua nova logo se necessário */
+    max-height: 60px;
 }
 
 .nav-list {
@@ -50,7 +49,6 @@ nav {
     display: flex;
 }
 
-/* Cor dos links do menu alterada para branco */
 .nav-list a {
     color: white;
     font-weight: bold;
@@ -67,7 +65,6 @@ nav {
     cursor: pointer;
 }
 
-/* Cor das linhas do menu "hambúrguer" alterada para branco */
 .mobile-menu div {
     width: 32px;
     height: 2px;
@@ -76,7 +73,7 @@ nav {
     transition: 0.3s;
 }
 
-/* --- CONTEÚDO PRINCIPAL --- */
+/* --- CONTEÚDO PRINCIPAL (HERO SECTION) --- */
 .trocadeoleo {
     height: 90vh;
     background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(imgs/trocadeoleo.jpg);
@@ -100,6 +97,7 @@ nav {
     font-size: 1.2em;
 }
 
+/* --- SEÇÃO DE SERVIÇOS --- */
 .servicos {
     font-family: 'Roboto Slab', serif;
     text-align: center;
@@ -127,7 +125,7 @@ nav {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    height: 100%; /* Garante que os cards tenham a mesma altura */
+    height: 100%;
 }
 
 .box:hover {
@@ -254,16 +252,16 @@ footer {
 .container > a:nth-child(3) { transition-delay: 200ms; }
 .container > a:nth-child(4) { transition-delay: 300ms; }
 
-
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 999px) {
     .nav-list {
         position: fixed;
-        top: 8vh;
+        top: 10vh;
         right: 0;
-        width: 60vw;
-        height: 92vh;
-        background: #fff;
+        width: 65vw;
+        height: 90vh;
+        background: linear-gradient(to bottom, #00387d, #1463a0);
+        box-shadow: -5px 0px 15px rgba(0,0,0,0.2);
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
