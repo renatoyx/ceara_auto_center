@@ -1,0 +1,116 @@
+/* Estilos específicos para a página servicos.html */
+
+/* Hero Section */
+.servicos-hero {
+    height: 50vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imgs/mecanico.jpg'); /* Sugestão: use uma imagem de um mecânico trabalhando */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.servicos-hero h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.8em;
+}
+
+.servicos-hero p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Conteúdo principal e Grid de Serviços */
+.servicos-conteudo {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.servico-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.servico-icone {
+    font-size: 3em;
+    color: #333; /* Cor dos ícones */
+    margin-bottom: 20px;
+}
+
+.servico-card h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.servico-card p {
+    line-height: 1.6;
+}
+
+/* Seção Final de Chamada para Ação (CTA) */
+.servicos-cta {
+    text-align: center;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 50px 20px;
+    border-radius: 8px;
+    margin: 80px 0 0 0;
+}
+
+.servicos-cta h2 {
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    font-size: 2em;
+}
+
+.servicos-cta p {
+    max-width: 600px;
+    margin: 15px auto 25px auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #25d366; /* Verde do WhatsApp */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px; /* Botão mais arredondado */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #1ebe58;
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.cta-button i {
+    margin-right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .servicos-hero h1 {
+        font-size: 2em;
+    }
+}

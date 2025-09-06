@@ -1,0 +1,116 @@
+/* Estilos específicos para a página sobre.html */
+
+/* Hero Section */
+.sobre-hero {
+    height: 50vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imgs/FRENTE LOJA.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.sobre-hero h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5em;
+    max-width: 600px;
+}
+
+/* Conteúdo principal */
+.sobre-conteudo {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.sobre-conteudo h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sobre-conteudo p {
+    margin-bottom: 40px;
+}
+
+/* Seção de Missão, Visão e Valores */
+.missao-valores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.missao-valores .card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.missao-valores .card h3 {
+    font-family: 'Roboto Slab', serif;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.missao-valores .card i {
+    color: #333; /* Cor dos ícones */
+    margin-right: 8px;
+}
+
+.missao-valores .card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+/* Seção de Chamada para Ação (CTA) */
+.sobre-cta {
+    text-align: center;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 50px 20px;
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+.sobre-cta h2 {
+    color: white;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ccc;
+    color: #1a1a1a;
+    opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sobre-hero h1 {
+        font-size: 2em;
+    }
+
+    .sobre-conteudo h2 {
+        font-size: 1.8em;
+    }
+}
