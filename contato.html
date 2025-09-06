@@ -6,7 +6,8 @@
     <meta name="description" content="Entre em contato com a Ceará Auto Center. Agende seu serviço, tire dúvidas ou faça um orçamento. Estamos no SOFN, Brasília-DF.">
     <title>Contato - Ceará Auto Center</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="contato.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="contato.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
@@ -81,21 +82,19 @@
             </div>
 
             <div class="contato-form">
-                <h3>Envie uma Mensagem</h3>
-                <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
+                <h3>Envie uma Mensagem Direto no WhatsApp</h3>
+                <form id="whatsapp-form">
                     <div class="form-group">
-                        <label for="name">Nome</label>
+                        <label for="name">Seu Nome</label>
                         <input type="text" name="name" id="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensagem</label>
+                        <label for="message">Sua Mensagem</label>
                         <textarea name="message" id="message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="cta-button">Enviar Mensagem</button>
+                    <button type="submit" class="cta-button">
+                        <i class="fa-brands fa-whatsapp"></i> Enviar via WhatsApp
+                    </button>
                 </form>
             </div>
         </div>
