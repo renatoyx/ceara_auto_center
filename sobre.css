@@ -1,3 +1,6 @@
+/* Estilos específicos para a página sobre.html */
+
+/* Hero Section */
 .sobre-hero {
     height: 50vh;
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imgs/FRENTE\ LOJA.jpg');
@@ -16,6 +19,7 @@
     max-width: 600px;
 }
 
+/* Conteúdo principal */
 .sobre-conteudo {
     width: 90%;
     max-width: 900px;
@@ -35,6 +39,7 @@
     margin-bottom: 40px;
 }
 
+/* Seção de Missão, Visão e Valores */
 .missao-valores {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -57,7 +62,7 @@
 }
 
 .missao-valores .card i {
-    color: #333; 
+    color: #333; /* Cor dos ícones */
     margin-right: 8px;
 }
 
@@ -67,6 +72,7 @@
     text-align: left;
 }
 
+/* Seção de Chamada para Ação (CTA) */
 .sobre-cta {
     text-align: center;
     background-color: #1a1a1a;
@@ -98,6 +104,7 @@
     opacity: 1;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
     .sobre-hero h1 {
         font-size: 2em;

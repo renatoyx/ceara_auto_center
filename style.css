@@ -73,22 +73,30 @@ nav {
     transition: 0.3s;
 }
 
+/* --- CONTEÚDO PRINCIPAL (HERO SECTION SLIDER) --- */
 .slider {
     position: relative;
     width: 100%;
     height: 50vh;
-    overflow: hidden;
+    overflow: hidden; /* Essencial para o efeito de deslizamento */
+}
 
 .slides {
-    display: flex; 
-    width: 300%; 
+    display: flex; /* Coloca os slides em linha */
+    width: 300%; /* Largura total (100% por slide) */
     height: 100%;
-    transition: transform 0.8s ease-in-out; 
+    transition: transform 0.8s ease-in-out; /* Controla a animação de deslizamento */
 }
 
 .slide {
-    width: 100%; 
+    width: 100%; /* Garante que cada slide ocupe o container */
     height: 100%;
+    /* Removemos opacity e display, pois agora controlamos com transform */
+}
+
+.slide.active {
+    /* A classe 'active' não é mais necessária para a visibilidade do slide,
+       mas o JS a utiliza para controle. Não precisamos de estilos aqui. */
 }
 
 .slide img {
@@ -97,6 +105,8 @@ nav {
     object-fit: cover;
     filter: brightness(0.7);
 }
+
+/* O restante dos estilos (botões e pontos) permanece o mesmo */
 
 .prev, .next {
     cursor: pointer;
@@ -146,6 +156,7 @@ nav {
     background-color: #ffffff;
 }
 
+/* --- SEÇÃO DE SERVIÇOS --- */
 .servicos {
     font-family: 'Roboto Slab', serif;
     text-align: center;
@@ -284,6 +295,7 @@ footer {
     border-radius: 8px;
 }
 
+/* --- ESTILOS DE ANIMAÇÃO COM JAVASCRIPT --- */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
@@ -386,4 +398,4 @@ footer {
 
     .hero-text h1 { font-size: 2em; }
     .hero-text p { font-size: 1em; }
-}};
+}

@@ -1,7 +1,9 @@
+/* Estilos específicos para a página servicos.html */
 
+/* Hero Section */
 .servicos-hero {
     height: 50vh;
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imgs/mecanico.jpg'); 
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imgs/mecanico.jpg'); /* Sugestão: use uma imagem de um mecânico trabalhando */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -21,6 +23,7 @@
     margin-top: 10px;
 }
 
+/* Conteúdo principal e Grid de Serviços */
 .servicos-conteudo {
     width: 90%;
     max-width: 1200px;
@@ -49,7 +52,7 @@
 
 .servico-icone {
     font-size: 3em;
-    color: #333; 
+    color: #333; /* Cor dos ícones */
     margin-bottom: 20px;
 }
 
@@ -63,6 +66,7 @@
     line-height: 1.6;
 }
 
+/* Seção Final de Chamada para Ação (CTA) */
 .servicos-cta {
     text-align: center;
     background-color: #1a1a1a;
@@ -85,10 +89,10 @@
 
 .cta-button {
     display: inline-block;
-    background-color: #25d366; 
+    background-color: #25d366; /* Verde do WhatsApp */
     color: white;
     padding: 15px 30px;
-    border-radius: 50px; 
+    border-radius: 50px; /* Botão mais arredondado */
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s, transform 0.3s;

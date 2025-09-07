@@ -1,6 +1,7 @@
+// Espera o documento HTML ser completamente carregado para rodar o script
 document.addEventListener('DOMContentLoaded', () => {
 
-// menu
+  // --- LÓGICA DO MENU MOBILE ---
   class MobileNavbar {
     constructor(mobileMenu, navList, navLinks) {
       this.mobileMenu = document.querySelector(mobileMenu);
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   mobileNavbar.init();
 
-// rolagem
+  // --- LÓGICA PARA ANIMAÇÃO DE ROLAGEM ---
   const animatedElements = document.querySelectorAll('.animate-on-scroll');
   if (animatedElements.length > 0) {
     const observer = new IntersectionObserver((entries) => {
@@ -64,28 +65,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-//formulario do whats
+  // --- NOVA LÓGICA PARA O FORMULÁRIO DE CONTATO VIA WHATSAPP ---
   const whatsappForm = document.getElementById('whatsapp-form');
   
   if (whatsappForm) {
     whatsappForm.addEventListener('submit', function(event) {
+      // Previne o comportamento padrão de envio do formulário
       event.preventDefault();
 
+      // Pega os valores dos campos
       const name = document.getElementById('name').value;
       const message = document.getElementById('message').value;
 
+      // Número de telefone da oficina (formato internacional sem '+' ou '00')
       const phone = '5561999812118';
 
+      // Monta a mensagem final
       const finalMessage = `Olá! Meu nome é ${name}. Gostaria de dizer que: ${message}`;
 
+      // Codifica a mensagem para ser usada em uma URL
       const encodedMessage = encodeURIComponent(finalMessage);
 
+      // Cria o link final do WhatsApp
       const whatsappURL = `https://wa.me/${phone}?text=${encodedMessage}`;
 
+      // Abre o link em uma nova aba
       window.open(whatsappURL, '_blank');
     });
   }
-//slider da pag inicial
+// --- LÓGICA DO SLIDER NA PÁGINA INICIAL ---
   const slider = document.querySelector('.slider');
   const slidesContainer = document.querySelector('.slider .slides');
   const slides = document.querySelectorAll('.slider .slide');
@@ -98,12 +106,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let slideInterval;
 
     const goToSlide = (slideIndex) => {
+      // Remove a classe 'active' do dot antigo
       dots[currentSlide].classList.remove('active');
       
+      // Atualiza o índice do slide atual
       currentSlide = (slideIndex + slides.length) % slides.length;
       
+      // Move o container de slides
       slidesContainer.style.transform = `translateX(-${currentSlide * (100 / slides.length)}%)`;
       
+      // Adiciona a classe 'active' ao novo dot
       dots[currentSlide].classList.add('active');
     };
 
@@ -116,13 +128,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const startSlideShow = () => {
-      slideInterval = setInterval(nextSlide, 5000);
+      slideInterval = setInterval(nextSlide, 5000); // Muda a cada 5 segundos
     };
 
     const stopSlideShow = () => {
       clearInterval(slideInterval);
     };
 
+    // Event Listeners para os botões
     nextButton.addEventListener('click', () => {
       stopSlideShow();
       nextSlide();
@@ -135,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
       startSlideShow();
     });
 
+    // Event Listeners para os indicadores
     dots.forEach(dot => {
       dot.addEventListener('click', () => {
         stopSlideShow();
@@ -142,10 +156,14 @@ document.addEventListener('DOMContentLoaded', () => {
         startSlideShow();
       });
     });
-   
+    
+    // Configuração inicial
+    // É importante ajustar a largura do container de slides dinamicamente
     slidesContainer.style.width = `${slides.length * 100}%`;
     dots[0].classList.add('active');
 
+
+    // Inicia o slideshow
     startSlideShow();
   }
 });
