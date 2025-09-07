@@ -93,5 +93,77 @@ document.addEventListener('DOMContentLoaded', () => {
       window.open(whatsappURL, '_blank');
     });
   }
+// --- LÓGICA DO SLIDER NA PÁGINA INICIAL ---
+  const slider = document.querySelector('.slider');
+  const slidesContainer = document.querySelector('.slider .slides');
+  const slides = document.querySelectorAll('.slider .slide');
+  const nextButton = document.querySelector('.slider .next');
+  const prevButton = document.querySelector('.slider .prev');
+  const dots = document.querySelectorAll('.slider .dot');
+  
+  if (slides.length > 0) {
+    let currentSlide = 0;
+    let slideInterval;
 
+    const goToSlide = (slideIndex) => {
+      // Remove a classe 'active' do dot antigo
+      dots[currentSlide].classList.remove('active');
+      
+      // Atualiza o índice do slide atual
+      currentSlide = (slideIndex + slides.length) % slides.length;
+      
+      // Move o container de slides
+      slidesContainer.style.transform = `translateX(-${currentSlide * (100 / slides.length)}%)`;
+      
+      // Adiciona a classe 'active' ao novo dot
+      dots[currentSlide].classList.add('active');
+    };
+
+    const nextSlide = () => {
+      goToSlide(currentSlide + 1);
+    };
+
+    const prevSlide = () => {
+      goToSlide(currentSlide - 1);
+    };
+
+    const startSlideShow = () => {
+      slideInterval = setInterval(nextSlide, 5000); // Muda a cada 5 segundos
+    };
+
+    const stopSlideShow = () => {
+      clearInterval(slideInterval);
+    };
+
+    // Event Listeners para os botões
+    nextButton.addEventListener('click', () => {
+      stopSlideShow();
+      nextSlide();
+      startSlideShow();
+    });
+
+    prevButton.addEventListener('click', () => {
+      stopSlideShow();
+      prevSlide();
+      startSlideShow();
+    });
+
+    // Event Listeners para os indicadores
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        stopSlideShow();
+        goToSlide(parseInt(dot.dataset.slide));
+        startSlideShow();
+      });
+    });
+    
+    // Configuração inicial
+    // É importante ajustar a largura do container de slides dinamicamente
+    slidesContainer.style.width = `${slides.length * 100}%`;
+    dots[0].classList.add('active');
+
+
+    // Inicia o slideshow
+    startSlideShow();
+  }
 });

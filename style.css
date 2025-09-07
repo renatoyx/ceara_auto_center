@@ -73,28 +73,87 @@ nav {
     transition: 0.3s;
 }
 
-/* --- CONTEÚDO PRINCIPAL (HERO SECTION) --- */
-.trocadeoleo {
-    height: 90vh;
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(imgs/trocadeoleo.jpg);
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+/* --- CONTEÚDO PRINCIPAL (HERO SECTION SLIDER) --- */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden; /* Essencial para o efeito de deslizamento */
+}
+
+.slides {
+    display: flex; /* Coloca os slides em linha */
+    width: 300%; /* Largura total (100% por slide) */
+    height: 100%;
+    transition: transform 0.8s ease-in-out; /* Controla a animação de deslizamento */
+}
+
+.slide {
+    width: 100%; /* Garante que cada slide ocupe o container */
+    height: 100%;
+    /* Removemos opacity e display, pois agora controlamos com transform */
+}
+
+.slide.active {
+    /* A classe 'active' não é mais necessária para a visibilidade do slide,
+       mas o JS a utiliza para controle. Não precisamos de estilos aqui. */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+/* O restante dos estilos (botões e pontos) permanece o mesmo */
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
     color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.4);
+    border: none;
 }
 
-.hero-text h1 {
-    font-family: 'Roboto Slab', serif;
-    font-size: 3em;
-    margin-bottom: 0.5em;
-    font-weight: 700;
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
-.hero-text p {
-    font-size: 1.2em;
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.dots-container {
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: #ffffff;
 }
 
 /* --- SEÇÃO DE SERVIÇOS --- */
